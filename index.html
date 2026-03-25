@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- SEO BASIC -->
+<meta name="description" content="LALKAAR - NITH Annual Sport Meet 2026. Official website of Sports Committee of NIT Hamirpur. Meet our team, faculty and core committee members.">
+<meta name="keywords" content="LALKAAR, NITH, NIT Hamirpur, Annual Sport Meet, Sports Committee, LALKAAR 2026, NITH Sports">
+<meta name="author" content="Sports Committee NITH">
+<meta name="robots" content="index, follow">
+
+<!-- OPEN GRAPH (shows preview when shared on WhatsApp, Instagram, LinkedIn) -->
+<meta property="og:title" content="LALKAAR — NITH Annual Sport Meet 2026">
+<meta property="og:description" content="Official website of LALKAAR, the Annual Sport Meet of NIT Hamirpur presented by the Sports Committee.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://YOUR-NETLIFY-URL.netlify.app">
+<meta property="og:image" content="https://YOUR-NETLIFY-URL.netlify.app/preview.jpg">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LALKAAR — NITH Annual Sport Meet 2026">
+<meta name="twitter:description" content="Official website of LALKAAR, the Annual Sport Meet of NIT Hamirpur.">
+
+
+<title>LALKAAR — The Committee</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #c8102e;
+  --deep-red: #7a0018;
+  --blood: #4a0010;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --dark: #080808;
+  --dark2: #101010;
+  --dark3: #181818;
+  --text: #e8e0d0;
+  --mono: 'Share Tech Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--dark);
+  color: var(--text);
+  font-family: 'Crimson Pro', serif;
+  overflow-x: hidden;
+}
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.028; pointer-events: none; z-index: 9999;
+}
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background: repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.04) 3px,rgba(0,0,0,0.04) 6px);
+  pointer-events: none; z-index: 9998;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  overflow: hidden;
+  padding: 60px 20px;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(200,16,46,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 10% 90%, rgba(200,16,46,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 90% 90%, rgba(201,168,76,0.05) 0%, transparent 50%),
+    var(--dark);
+}
+.hero-mask-bg {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(700px, 90vw);
+  opacity: 0.04;
+  pointer-events: none;
+}
+.corner-mask {
+  position: absolute;
+  width: 120px;
+  opacity: 0.06;
+  animation: cornerFloat 7s ease-in-out infinite;
+}
+.corner-mask.tl { top: 40px; left: 40px; animation-delay: 0s; }
+.corner-mask.tr { top: 40px; right: 40px; animation-delay: -3.5s; }
+.corner-mask.bl { bottom: 80px; left: 40px; animation-delay: -1.5s; }
+.corner-mask.br { bottom: 80px; right: 40px; animation-delay: -5s; }
+@keyframes cornerFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.hero-content { position: relative; text-align: center; z-index: 2; }
+.classified-row {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  margin-bottom: 20px;
+}
+.classified-line { width: 60px; height: 1px; background: rgba(200,16,46,0.5); }
+.classified-text {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--gold); letter-spacing: 0.5em; text-transform: uppercase;
+}
+.hero-eyebrow {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.5em; color: rgba(200,16,46,0.7);
+  margin-bottom: 8px; text-transform: uppercase;
+}
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(70px, 14vw, 160px);
+  line-height: 0.85; color: var(--red);
+  text-shadow: 0 0 120px rgba(200,16,46,0.35), 6px 6px 0 var(--deep-red), 12px 12px 0 rgba(74,0,16,0.5);
+  letter-spacing: 0.03em;
+  animation: titleFlicker 8s ease-in-out infinite;
+}
+@keyframes titleFlicker {
+  0%,94%,98%,100% { opacity: 1; } 95% { opacity: 0.92; } 96% { opacity: 1; } 97% { opacity: 0.88; }
+}
+.hero-sub {
+  font-family: 'Crimson Pro', serif; font-style: italic;
+  font-size: clamp(18px, 3vw, 28px); font-weight: 300;
+  color: var(--gold-light); letter-spacing: 0.2em; margin-top: 10px;
+}
+.hero-divider {
+  width: 200px; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red), var(--gold), var(--red), transparent);
+  margin: 24px auto;
+}
+.hero-desc {
+  font-size: 16px; font-style: italic; font-weight: 300;
+  color: rgba(232,224,208,0.55); max-width: 480px;
+  margin: 0 auto 32px; line-height: 1.7; letter-spacing: 0.05em;
+}
+.scroll-cue {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  cursor: pointer; animation: scrollBob 2s ease-in-out infinite; margin-top: 40px;
+}
+.scroll-cue span { font-family: var(--mono); font-size: 9px; letter-spacing: 0.4em; color: rgba(200,16,46,0.5); }
+@keyframes scrollBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+/* STATS BAR */
+.stats-bar {
+  background: var(--deep-red);
+  border-top: 1px solid rgba(200,16,46,0.4);
+  border-bottom: 1px solid rgba(200,16,46,0.4);
+  padding: 18px 40px;
+  display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
+}
+.stat-item { text-align: center; }
+.stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--gold-light); line-height: 1; }
+.stat-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; color: rgba(232,224,208,0.5); text-transform: uppercase; margin-top: 2px; }
+
+/* SECTION HEAD */
+.section-head { text-align: center; padding: 70px 20px 20px; }
+.section-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.5em; color: var(--red); text-transform: uppercase; margin-bottom: 10px; }
+.section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 7vw, 72px); color: #fff; letter-spacing: 0.05em; }
+.section-rule { width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 16px auto 0; }
+
+/* FILTER */
+.filter-wrap { display: flex; justify-content: center; gap: 8px; padding: 36px 20px 0; flex-wrap: wrap; }
+.fbtn {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em;
+  padding: 9px 22px; background: transparent;
+  border: 1px solid rgba(200,16,46,0.35); color: rgba(232,224,208,0.6);
+  cursor: pointer; transition: all 0.25s; text-transform: uppercase;
+  position: relative; overflow: hidden;
+}
+
+.fbtn::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--red); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.25s; z-index: -1;
+}
+.fbtn:hover::before, .fbtn.on::before { transform: scaleX(1); }
+.fbtn:hover, .fbtn.on { color: #fff; border-color: var(--red); }
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  max-width: 1400px;
+  margin: 48px auto 0;
+  padding: 0 32px 100px;
+}
+
+/* CARD */
+.cw { perspective: 1100px; height: 480px; cursor: pointer; animation: cardIn 0.55s ease both; }
+@keyframes cardIn { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+.ci { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.4,0.2,0.2,1); }
+.cw:hover .ci { transform: rotateY(180deg); }
+.cf { position: absolute; inset: 0; backface-visibility: hidden; overflow: hidden; }
+
+/* FRONT */
+.front { background: var(--dark2); border: 1px solid rgba(200,16,46,0.2); }
+.front::after {
+  content: ''; position: absolute; top: 0; right: 0;
+  border-style: solid; border-width: 0 52px 52px 0;
+  border-color: transparent rgba(200,16,46,0.7) transparent transparent; z-index: 4;
+}
+.photo-wrap { position: absolute; inset: 0; }
+.photo-wrap img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.6s ease, filter 0.6s ease;
+  filter: sepia(10%) contrast(1.05);
+}
+.cw:hover .photo-wrap img { transform: scale(1.05); filter: sepia(50%) contrast(1.1) hue-rotate(-10deg); }
+.photo-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 14px;
+  background: linear-gradient(160deg, var(--dark3) 0%, var(--dark2) 100%);
+}
+.ph-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; color: rgba(200,16,46,0.35); }
+.front-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.97) 100%); z-index: 2;
+}
+.num-badge {
+  position: absolute; top: 14px; left: 14px; z-index: 5;
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em;
+  color: var(--gold); border: 1px solid rgba(201,168,76,0.35);
+  padding: 4px 8px; background: rgba(0,0,0,0.6);
+}
+.dept-pill {
+  position: absolute; bottom: 90px; left: 20px; z-index: 3;
+  font-family: var(--mono); font-size: 8px; letter-spacing: 0.25em;
+  color: var(--gold); border: 1px solid rgba(201,168,76,0.3);
+  padding: 3px 10px; background: rgba(0,0,0,0.5); text-transform: uppercase;
+}
+.front-info { position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; padding: 20px; }
+
+.fname { font-family: 'Bebas Neue', sans-serif; font-size: 30px; line-height: 1; color: #fff; text-shadow: 0 2px 16px rgba(0,0,0,0.9); }
+.frole { font-style: italic; font-size: 14px; font-weight: 300; color: var(--gold-light); margin-top: 3px; }
+.mask-mini { position: absolute; bottom: 16px; right: 16px; z-index: 3; opacity: 0.35; width: 28px; }
+
+/* BACK */
+.back {
+  background: var(--dark2); border: 1px solid rgba(200,16,46,0.25);
+  transform: rotateY(180deg); padding: 24px 22px;
+  display: flex; flex-direction: column; gap: 12px; position: relative;
+}
+.back::before {
+  content: ''; position: absolute; top: -50px; right: -50px;
+  width: 220px; height: 220px;
+  border: 70px solid rgba(200,16,46,0.05); border-radius: 50%; pointer-events: none;
+}
+.back::after {
+  content: ''; position: absolute; bottom: -60px; left: -40px;
+  width: 180px; height: 180px;
+  border: 50px solid rgba(201,168,76,0.04); border-radius: 50%; pointer-events: none;
+}
+.back-topbar { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--red), var(--deep-red), transparent); }
+.back-head { border-bottom: 1px solid rgba(200,16,46,0.25); padding-bottom: 12px; }
+.back-codename { font-family: var(--mono); font-size: 9px; color: var(--red); letter-spacing: 0.35em; margin-bottom: 4px; }
+.back-name { font-family: 'Bebas Neue', sans-serif; font-size: 26px; line-height: 1; color: #fff; }
+.back-role { font-style: italic; font-size: 13px; color: var(--gold-light); margin-top: 2px; }
+.bio-lbl { font-family: var(--mono); font-size: 8px; letter-spacing: 0.35em; color: rgba(201,168,76,0.45); margin-bottom: 5px; }
+.bio-txt {
+  font-size: 13px; line-height: 1.65; color: rgba(232,224,208,0.82); font-weight: 300;
+  display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; flex: 1;
+}
+.back-stats { display: flex; gap: 12px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 10px; }
+.bs { flex: 1; }
+.bs-lbl { font-family: var(--mono); font-size: 7px; color: rgba(201,168,76,0.45); letter-spacing: 0.2em; text-transform: uppercase; }
+.bs-val { font-family: var(--mono); font-size: 11px; color: var(--gold-light); margin-top: 2px; }
+.active-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #2ecc71; margin-right: 4px; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+.socials { display: flex; flex-wrap: wrap; gap: 6px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; }
+.slink {
+  font-family: var(--mono); font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(200,16,46,0.75); border: 1px solid rgba(200,16,46,0.3);
+  padding: 4px 10px; text-decoration: none; transition: all 0.2s;
+}
+.slink:hover { background: var(--red); color: #fff; border-color: var(--red); }
+
+/* FOOTER */
+footer { text-align: center; padding: 50px 20px 40px; border-top: 1px solid rgba(200,16,46,0.15); }
+.footer-mask { width: 48px; margin: 0 auto 16px; opacity: 0.2; }
+.footer-text { font-family: var(--mono); font-size: 9px; color: rgba(232,224,208,0.2); letter-spacing: 0.4em; text-transform: uppercase; }
+.footer-quote { font-style: italic; font-size: 15px; font-weight: 300; color: rgba(201,168,76,0.3); margin-top: 10px; letter-spacing: 0.1em; }
+/* AUTO SCALE */
+img { max-width: 100%; height: auto; }
+ 
+/* ── LARGE SCREENS 1200px ── */
+@media (max-width: 1200px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+ 
+/* ── TABLETS LANDSCAPE 1024px ── */
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 24px 80px; }
+  .cw { height: 440px; }
+  .hero-title { font-size: clamp(60px, 12vw, 120px); }
+}
+ 
+/* ── TABLETS PORTRAIT 768px ── */
+@media (max-width: 768px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 18px; padding: 0 16px 80px; }
+  .cw { height: 400px; }
+  .corner-mask { width: 70px; }
+  .hero-title { font-size: clamp(50px, 11vw, 100px); }
+  .hero-desc { font-size: 14px; }
+  .filter-wrap { gap: 6px; padding: 24px 16px 0; }
+  .fbtn { padding: 8px 16px; font-size: 9px; }
+  .section-head { padding: 50px 16px 16px; }
+  .fname { font-size: 24px; }
+  .frole { font-size: 12px; }
+}
+ 
+/* ── MOBILE LARGE 600px ── */
+@media (max-width: 600px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 12px 60px; }
+  .cw { height: 360px; }
+  .hero-title { font-size: clamp(44px, 13vw, 80px); }
+  .hero-sub { font-size: 14px; letter-spacing: 0.1em; }
+  .hero-desc { font-size: 13px; padding: 0 10px; }
+  .classified-text { font-size: 8px; letter-spacing: 0.3em; }
+  .fname { font-size: 20px; }
+  .frole { font-size: 11px; }
+  .back-name { font-size: 20px; }
+  .bio-txt { font-size: 11px; }
+  .bs-val { font-size: 10px; }
+  .corner-mask { width: 50px; }
+  .footer-quote { font-size: 12px; }
+}
+ 
+/* ── MOBILE SMALL 400px ── */
+@media (max-width: 400px) {
+  .grid { grid-template-columns: 1fr; gap: 16px; padding: 0 16px 60px; }
+  .cw { height: 420px; }
+  .hero-title { font-size: clamp(40px, 15vw, 70px); }
+  .hero-desc { display: none; }
+  .filter-wrap { gap: 8px; }
+  .fbtn { padding: 8px 14px; font-size: 8px; letter-spacing: 0.15em; }
+  .section-title { font-size: 36px; }
+  .corner-mask { display: none; }
+}
+
+/*@media (max-width: 768px) {
+  .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; padding: 0 16px 80px; }
+  .cw { height: 420px; }
+  .stats-bar { gap: 30px; padding: 14px 20px; }
+  .corner-mask { width: 60px; }
+}
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 10px 60px; }
+  .cw { height: 360px; }
+}*/
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-mask-bg">
+    <svg viewBox="0 0 400 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="200" cy="190" rx="155" ry="175" fill="#c8102e"/>
+      <ellipse cx="200" cy="190" rx="120" ry="140" fill="#7a0018"/>
+      <ellipse cx="148" cy="168" rx="34" ry="44" fill="#0a0a0a"/>
+      <ellipse cx="252" cy="168" rx="34" ry="44" fill="#0a0a0a"/>
+      <ellipse cx="148" cy="168" rx="14" ry="18" fill="#c9a84c" opacity="0.6"/>
+      <ellipse cx="252" cy="168" rx="14" ry="18" fill="#c9a84c" opacity="0.6"/>
+      <path d="M130 270 Q165 250 200 258 Q235 250 270 270" stroke="#c9a84c" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M122 262 Q100 280 90 258" stroke="#c9a84c" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M278 262 Q300 280 310 258" stroke="#c9a84c" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M60 130 Q110 40 200 30 Q290 40 340 130" stroke="#c8102e" stroke-width="6" fill="none" opacity="0.4"/>
+    </svg>
+  </div>
+  <div class="corner-mask tl"><svg viewBox="0 0 100 110" fill="none"><ellipse cx="50" cy="48" rx="38" ry="44" fill="#c8102e"/><ellipse cx="36" cy="42" rx="9" ry="11" fill="#000"/><ellipse cx="64" cy="42" rx="9" ry="11" fill="#000"/><path d="M32 70 Q42 62 50 65 Q58 62 68 70" stroke="#c9a84c" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+  <div class="corner-mask tr"><svg viewBox="0 0 100 110" fill="none"><ellipse cx="50" cy="48" rx="38" ry="44" fill="#c8102e"/><ellipse cx="36" cy="42" rx="9" ry="11" fill="#000"/><ellipse cx="64" cy="42" rx="9" ry="11" fill="#000"/><path d="M32 70 Q42 62 50 65 Q58 62 68 70" stroke="#c9a84c" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+  <div class="corner-mask bl"><svg viewBox="0 0 100 110" fill="none"><ellipse cx="50" cy="48" rx="38" ry="44" fill="#c8102e"/><ellipse cx="36" cy="42" rx="9" ry="11" fill="#000"/><ellipse cx="64" cy="42" rx="9" ry="11" fill="#000"/><path d="M32 70 Q42 62 50 65 Q58 62 68 70" stroke="#c9a84c" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+  <div class="corner-mask br"><svg viewBox="0 0 100 110" fill="none"><ellipse cx="50" cy="48" rx="38" ry="44" fill="#c8102e"/><ellipse cx="36" cy="42" rx="9" ry="11" fill="#000"/><ellipse cx="64" cy="42" rx="9" ry="11" fill="#000"/><path d="M32 70 Q42 62 50 65 Q58 62 68 70" stroke="#c9a84c" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+
+  <div class="hero-content">
+    <div class="classified-row">
+      <div class="classified-line"></div>
+      <div class="hero-sub">NITH ANNUAL SPORT MEET-26'</div>
+      <div class="classified-line"></div>
+    </div>
+    <div class="hero-eyebrow"></div>
+    <div class="hero-title">LALKAAR</div>
+    <div class="hero-sub">PRESENTED BY SPORTS COMMITTEE OF  NIT  HAMIRPUR</div>
+    <div class="hero-divider"></div>
+    <p class="hero-desc"></p>
+    <div class="scroll-cue" onclick="document.getElementById('dossier').scrollIntoView()">
+      <span>View MORE</span>
+      <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1L9 9L17 1" stroke="#c8102e" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar" id="stats-bar">
+  <div class="stat-item"><div class="stat-num" id="s-team">RUNNING  -  SHOT PUT  -  LONG JUMP-  TRIPLE JUMP  -  HIGH JUMP  -  DISCUS THROW  </div><div class="stat-lbl"></div></div>
+  <div class="stat-item"><div class="stat-num" id="s-faculty"></div><div class="stat-lbl"></div></div>
+</div> 
+
+<div id="dossier">
+  <div class="section-head">
+    <div class="section-eyebrow"></div>
+    <div class="section-title">LALKAAR 26'</div>
+    <div class="section-rule"></div>
+  </div>
+  <div class="filter-wrap">
+     <button class="fbtn " onclick="filterCards('faculty',this)">faculty</button>
+    <button class="fbtn " onclick="filterCards('team',this)">CORE TEAM</button>
+   
+    
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<footer>
+  <div class="footer-mask"><svg viewBox="0 0 100 110" fill="none"><ellipse cx="50" cy="48" rx="38" ry="44" fill="#c8102e"/><ellipse cx="36" cy="42" rx="9" ry="11" fill="#000"/><ellipse cx="64" cy="42" rx="9" ry="11" fill="#000"/><path d="M32 70 Q42 62 50 65 Q58 62 68 70" stroke="#c9a84c" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M30 68 Q23 75 18 66" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M70 68 Q77 75 82 66" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  <div class="footer-text">LALKAAR · NITH ANNUAL SPORT MEET · 26'</div>
+  <div class="footer-quote"> "Run Faster, Jump Higher, Play Harder."</div>
+</footer>
+
+<script>
+
+
+const members = [
+//──faculty──
+{ name:"abhiii",        role:"STUDENT SPORTS SECRETARY",          dept:"faculty", year:"PROFESSOR", domain:"CRICKET",    photo:"", bio:"",branch:"", social:[{l:"LinkedIn",u:"#"},{l:"Email",u:"#"}] },
+{ name:"MANISH DHIMAN",        role:"ASSISTANT FACULTY INCHARGE",          dept:"faculty", year:"PROFESSOR", domain:"CRICKET",    photo:"MANISH.PNG", bio:"BRANCH:-CHEMICAL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Email",u:"#"}] },
+  // ── final year ──
+  { name:"SAKSHAM SONI",        role:"STUDENT SPORTS SECRETARY",          dept:"team", year:"Final Year", domain:"CRICKET",    photo:"SAKSHAM.jpg", bio:"BRANCH:-CHEMICAL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Instagram",u:""}] },
+  { name:"SARTHAK DHIMAN",         role:"STUDENT SPORTS TECHNICAL HEAD",     dept:"team", year:"Final Year", domain:"VOLLEYBALL",  photo:"sarthak.jpeg", bio:"BRANCH:-CIVIL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Twitter",u:""}] },
+  { name:"Shubham Verma ",        role:"STUDENT SPORTS COORDINATOR",          dept:"team", year:"Final Year", domain:"KABADDI",    photo:"s_verma.jpeg", bio:"BRANCH:-MATERIAL SCIENCE ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Email",u:"#"}] },
+  { name:"HIMANSHU CHAUHAN",      role:"STUDENT SPORTS JOINT SECRETARY (OUTDOOR)",  dept:"team", year:"MTECH 2ND", domain:"CRICKET",  photo:"himanshu.jpeg", bio:"BRANCH:-ELECTRICAL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Email",u:"#"}] },
+  { name:"SAURABH", role:"STUDENT SPORTS JOINT SECRETARY (OUTDOOR)",   dept:"team", year:"Final Year",   domain:"VOLLEYBALL",  photo:"SAURABH.jpg", bio:"BRANCH:-ELECTRICAL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Email",u:"#"}] },
+  { name:"HARSH KUMAR",       role:"STUDENT SPORTS JOINT SECRETARY (ATHLETICS)",     dept:"team",       year:"Final Year",   domain:"ATHLETICS", photo:"Chintu.jpg", bio:"BRANCH:-MECHANICAL ENGI.", social:[{l:"GitHub",u:"#"},{l:"LinkedIn",u:"#"}] },
+  { name:"VIPUJ ATTRI",    role:"STUDENT SPORTS JOINT SECRETARY BOY (OUTDOOR)",        dept:"team",       year:"Final Year",   domain:"BASKETBALL",      photo:"VIPUJ.jpg", bio:"BRANCH:-MATERIAL SCIENCE ENGI.", social:[{l:"Behance",u:"#"},{l:"Instagram",u:"#"}] },
+  
+  { name:"ISHITA HAWLADAR",        role:"STUDENT SPORTS JOINT SECRETARY GIRL (INDOOR)", dept:"team",       year:"Final Year",   domain:"TABLE TENNIS",     photo:"ishita.jpeg", bio:"BRANCH:-CHEMICAL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Twitter",u:"#"}] },
+  { name:"SIGMA SONKAR",       role:"STUDENT SPORTS JOINT SECRETARY GIRL (INDOOR)",        dept:"team",        year:"Final Year",   domain:"BADMINTON",   photo:"sigmaimage.jpg", bio:"BRANCH:-ELECTRONICS ENGI.", social:[{l:"LinkedIn",u:"#"}] },
+  { name:"AASHISH",         role:"STUDENT SPORTS JOINT SECRETARY BOY (INDOOR)",     dept:"team",        year:"Final Year",   domain:"Yoga",   photo:"aashish.jpeg", bio:"BRANCH:-COMPUTER SCIENCE ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Instagram",u:"#"}] },
+ 
+ // ── 3rd year ──
+  { name:"AMIT THAKUR",     role:"STUDENT SPORTS ASSISTANT SECRETARY (INDOOR)",   dept:"team",        year:"3rd Year",   domain:"KABADDI",photo:"amit.jpeg", bio:"BRANCH:-CIVIL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Email",u:"#"}] },
+  { name:"VISHAL THAKUR",    role:"STUDENT SPORTS ASSISTANT SECRETARY (OUTDOOR)",      dept:"team",        year:"3rd Year",   domain:"CRICKET",          photo:"vishal.jpeg", bio:"BRANCH:-CIVIL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Twitter",u:"#"}] },
+  { name:"MOHIT KALE",      role:"STUDENT SPORTS ASSISTANT SECRETARY (ATHLETICS)", dept:"team",    year:"3rd Year",   domain:"ATHLETICS",     photo:"mohit.JPG", bio:"BRANCH:-MATERIAL SCIENCE ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Instagram",u:"#"}] },
+  { name:"KARTIK NEGI",    role:"STUDENT SPORTS ASSISTANT SECRETARY (OUTDOOR)",   dept:"team",    year:"3rd Year",   domain:"CRICKET",      photo:"kartik.jpg", bio:"BRANCH:-MATERIAL SCIENCE ENGI.", social:[{l:"LinkedIn",u:"#"}] },
+  { name:"ANSHUL",   role:"STUDENT SPORTS ASSISTANT SECRETARY (INDOOR)",    dept:"team",    year:"3rd Year",   domain:"BADMINTON",        photo:"anshul'.jpeg", bio:"BRANCH:-CIVIL ENGI.", social:[{l:"Instagram",u:"#"},{l:"LinkedIn",u:"#"}] },
+  { name:"PANKAJ KUMAR", role:"STUDENT SPORTS ASSISTANT SECRETARY (OUTDOOR)",  dept:"team",    year:"3rd Year", domain:"CRICKET",     photo:"pankaj.jpeg", bio:"BRANCH:-CHEMICAL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Email",u:"#"}] },
+  { name:"SIDDHARTH PATHANIA",       role:"STUDENT SPORTS ASSISTANT SECRETARY (OUTDOOR)",          dept:"team",    year:"3rd Year",   domain:"FOOTBALL",  photo:"sidd.jpeg", bio:"BRANCH:-MECHANICAL ENGI.", social:[{l:"LinkedIn",u:"#"}] },
+  { name:"VEDANT KUMAR BHARTI",        role:"STUDENT SPORTS ASSISTANT SECRETARY GYM (INDOOR)",   dept:"team",      year:"3nd Year",   domain:"GYM",       photo:"vedant.jpeg", bio:"BRANCH:-MECHANICAL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Instagram",u:"#"}] },
+  { name:"BINDU",   role:"STUDENT SPORTS ASSISTANT SECRETARY GIRLS(ATHLETICS)",   dept:"team",  year:"3rd Year",   domain:"ATHLETICS",    photo:"bindu.jpeg", bio:"BRANCH:-COMPUTER SCIENCE ENGI.", social:[{l:"Instagram",u:"#"},{l:"LinkedIn",u:"#"}] },
+  
+  // ── 2Nd year ──
+
+  { name:"MANIK MEHRA",      role:"STUDENTS SPORTS COMMITTEE MEMBER",  dept:"team",      year:"2nd Year",   domain:"CRICKET",photo:"manik.jpeg", bio:"BRANCH:-MECHANICAL ENGI.", social:[{l:"LinkedIn",u:"#"}] },
+  { name:"GAURAV GUPTA",         role:"STUDENTS SPORTS COMMITTEE MEMBER",   dept:"team",      year:"2nd Year",   domain:"BASKETBALL",       photo:"gaurav.jpeg", bio:"BRANCH:-MECHANICAL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Instagram",u:"#"}] },
+  { name:"VIJAY KUMAR",      role:"STUDENTS SPORTS COMMITTEE MEMBER",   dept:"team",  year:"2nd Year",   domain:"CRICKET",    photo:"vijay.jpg", bio:"BRANCH:- ENGINEERING PHYSICS", social:[{l:"Instagram",u:"#"},{l:"LinkedIn",u:"#"}] },
+  { name:"HARDIK KASHYAP",      role:"STUDENTS SPORTS COMMITTEE MEMBER",  dept:"team",      year:"2nd Year",   domain:"CRICKET",photo:"Hardik Pic Lalkaar.jpg", bio:"BRANCH:-MECHANICAL ENGI.", social:[{l:"LinkedIn",u:"#"}] },
+  { name:"MOLIK GOPAL THAKUR",         role:"STUDENTS SPORTS COMMITTEE MEMBER",   dept:"team",      year:"2nd Year",   domain:"CRICKET",       photo:"molik.jpeg", bio:"BRANCH:-MATERIAL SCIENCE ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Instagram",u:"#"}] },
+  { name:"HIYANSH KASHYAP",      role:"STUDENTS SPORTS COMMITTEE MEMBER",  dept:"team",      year:"2nd Year",   domain:"CRICKET",photo:"HIYANSH.jpg", bio:"BRANCH:-MECHANICAL ENGI.", social:[{l:"LinkedIn",u:"#"}] },
+  { name:"KSHITIJ",     role:"STUDENTS SPORTS COMMITTEE MEMBER",   dept:"team",  year:"2nd Year",   domain:"VOLLEYBALL",    photo:"kshitij.jpeg", bio:"BRANCH:-COMPUTER SCIENCE ENGI.", social:[{l:"Instagram",u:"#"},{l:"LinkedIn",u:"#"}] },
+  { name:"DEVANSH JOKTA",    role:"STUDENTS SPORTS COMMITTEE MEMBER",  dept:"team",      year:"2nd Year",   domain:"FOOTBALL",photo:"devansh.jpeg", bio:"BRANCH:-ELECTRONICS ENGI.", social:[{l:"LinkedIn",u:"#"}] },
+  { name:"LAKSHAY SINGH STETA",          role:"STUDENTS SPORTS COMMITTEE MEMBER",   dept:"team",      year:"2nd Year",   domain:"VOLLEYBALL",       photo:"steta.jpeg", bio:"BRANCH:-ELECTRICAL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Instagram",u:"#"}] },
+  { name:"PRIYA YADAV",        role:"STUDENTS SPORTS COMMITTEE MEMBER",   dept:"team",  year:"2nd Year",   domain:"BADMINTON",    photo:"priya.jpeg", bio:"BRANCH:- ENGINEERING PHYSICS", social:[{l:"Instagram",u:"#"},{l:"LinkedIn",u:"#"}] },
+ 
+   
+   
+
+
+
+];
+
+
+// MASK SVG
+
+function maskSVG(w,h) {
+return '<svg width="'+w+'" height="'+h+'" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="50" cy="48" rx="38" ry="44" fill="#c8102e" opacity="0.85"/><ellipse cx="50" cy="48" rx="28" ry="34" fill="#7a0018" opacity="0.9"/><ellipse cx="36" cy="42" rx="9" ry="11" fill="#0a0a0a"/><ellipse cx="64" cy="42" rx="9" ry="11" fill="#0a0a0a"/><ellipse cx="36" cy="42" rx="4" ry="5" fill="#c9a84c" opacity="0.7"/><ellipse cx="64" cy="42" rx="4" ry="5" fill="#c9a84c" opacity="0.7"/><path d="M32 70 Q42 62 50 65 Q58 62 68 70" stroke="#c9a84c" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M30 68 Q23 76 18 66" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M70 68 Q77 76 82 66" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/></svg>';
+}
+
+
+// BUILD CARDS
+
+function buildCards(list) {
+  const grid = document.getElementById('grid');
+  const deptLabel = {faculty:'FACULTY', team:'team'};
+  grid.innerHTML = list.map(function(m,i) {
+    const photo = m.photo
+      ? '<div class="photo-wrap"><img src="'+m.photo+'" alt="'+m.name+'" loading="lazy"></div>'
+      : '<div class="photo-wrap"><div class="photo-placeholder">'+maskSVG(70,77)+'<span class="ph-label">ADD PHOTO</span></div></div>';
+    const socials = m.social.map(function(s){ return '<a class="slink" href="'+s.u+'" target="_blank">'+s.l+'</a>'; }).join('');
+    const dl = deptLabel[m.dept] || m.dept;
+    return '<div class="cw" data-dept="'+m.dept+'" style="animation-delay:'+(i%8*0.06)+'s">'+
+      '<div class="ci">'+
+        '<div class="cf front">'+
+          photo+
+          '<div class="front-overlay"></div>'+
+          '<div class="num-badge">'+String(i+1).padStart(2,'0')+'</div>'+
+          '<div class="dept-pill">'+dl+'</div>'+
+          '<div class="front-info">'+
+            //'<div class="codename">'+m.codename+'</div>'+
+            '<div class="fname">'+m.name+'</div>'+
+            '<div class="frole">'+m.role+'</div>'+
+          '</div>'+
+          '<div class="mask-mini">'+maskSVG(28,31)+'</div>'+
+        '</div>'+
+        '<div class="cf back">'+
+          '<div class="back-topbar"></div>'+
+          '<div class="back-head">'+
+            '<div class="back-codename">OPERATIVE · '+m.name+'</div>'+
+            '<div class="back-name">'+m.name+'</div>'+
+            '<div class="back-role">'+m.role+'</div>'+
+          '</div>'+
+          '<div><div class="bio-lbl">// PROFILE</div><p class="bio-txt">'+m.bio+'</p></div>'+
+          '<div class="back-stats">'+
+            '<div class="bs"><div class="bs-lbl">Year</div><div class="bs-val">'+m.year+'</div></div>'+
+            '<div class="bs"><div class="bs-lbl">Domain</div><div class="bs-val">'+m.domain+'</div></div>'+
+            '<div class="bs"><div class="bs-lbl">Status</div><div class="bs-val"><span class="active-dot"></span>Active</div></div>'+
+          '</div>'+
+          '<div class="socials">'+socials+'</div>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
+  }).join('');
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+  var firstBtn = document.querySelector('.fbtn');
+  if (firstBtn) filterCards('faculty', firstBtn);
+});
+
+// FILTER
+
+function filterCards(dept, btn) {
+  document.querySelectorAll('.fbtn').forEach(function(b){ b.classList.remove('on'); });
+  btn.classList.add('on');
+  document.querySelectorAll('.cw').forEach(function(c){
+    c.style.display = ( c.dataset.dept === dept) ? 'block' : 'none';
+  });
+}
+
+
+buildCards(members);
+
+
+</script>
+</body>
+</html>
