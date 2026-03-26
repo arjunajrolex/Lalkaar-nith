@@ -13,8 +13,7 @@
 <meta property="og:title" content="LALKAAR — NITH Annual Sport Meet 2026">
 <meta property="og:description" content="Official website of LALKAAR, the Annual Sport Meet of NIT Hamirpur presented by the Sports Committee.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://YOUR-NETLIFY-URL.netlify.app">
-<meta property="og:image" content="https://YOUR-NETLIFY-URL.netlify.app/preview.jpg">
+
 
 <!-- TWITTER CARD -->
 <meta name="twitter:card" content="summary_large_image">
@@ -180,6 +179,60 @@ body::before {
 }
 .fbtn:hover::before, .fbtn.on::before { transform: scaleX(1); }
 .fbtn:hover, .fbtn.on { color: #fff; border-color: var(--red); }
+
+.sub-filter-wrap {
+  display: flex; justify-content: center; gap: 12px;
+  padding: 20px 20px 0; flex-wrap: wrap;
+  animation: subFilterSlideIn 0.45s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+@keyframes subFilterSlideIn {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.sbtn {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em;
+  padding: 10px 26px; text-transform: uppercase;
+  background: rgba(114, 87, 13, 0.1);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(59, 13, 13, 0.2);
+  color: rgba(182, 64, 43, 0.825);
+  cursor: pointer; position: relative; overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 0 0 0 rgba(171, 47, 47, 0.607);
+}
+/* animated gradient sweep on hover */
+.sbtn::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(201,168,76,0.12) 40%, rgba(232,199,122,0.18) 60%, transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 0;
+}
+/* gold fill for active state */
+.sbtn::after {
+  content: ''; position: absolute; inset: 0;
+  background: transparent;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.35s  rgba(0, 0, 0, 0);
+  z-index: 0;
+}
+.sbtn span, .sbtn { position: relative; z-index: 1; }
+.sbtn:hover {
+  border-color: rgb(151, 119, 32);
+  color: var(--gold-light);
+  box-shadow: 0 0 18px rgb(105, 98, 80), inset 0 0 12px rgba(201,168,76,0.05);
+  transform: translateY(-2px);
+}
+.sbtn:hover::before { transform: translateX(100%); }
+.sbtn:active { transform: translateY(0) scale(0.97); }
+.sbtn.on::after { transform: scaleX(1); }
+.sbtn.on {
+  color: var(--dark); font-weight: 700;
+  border-color: var(--gold);
+  box-shadow: 0 0 22px rgba(124, 33, 0, 0.325), 0 4px 16px rgba(0,0,0,0.3);
+  transform: translateY(-1px);
+  text-shadow: 0 1px 0 rgba(210, 210, 209, 0.896);
+}
 
 /* GRID */
 .grid {
@@ -409,10 +462,15 @@ img { max-width: 100%; height: auto; }
     <div class="section-rule"></div>
   </div>
   <div class="filter-wrap">
-     <button class="fbtn " onclick="filterCards('faculty',this)">faculty</button>
-    <button class="fbtn " onclick="filterCards('team',this)">CORE TEAM</button>
-   
-    
+     <button class="fbtn " onclick="showMain('faculty',this)">faculty</button>
+    <button class="fbtn " onclick="showMain('team',this)">CORE TEAM</button>
+  </div>
+
+   <div class="sub-filter-wrap" id="sub-filter" style="display:none;">
+    <button class="sbtn" onclick="filterYear('Final Year',this)">FINAL YEAR</button>
+    <button class="sbtn"    onclick="filterYear('MTECH 2ND',this)">MTECH</button>
+    <button class="sbtn"    onclick="filterYear('3rd Year',this)">3RD YEAR</button>
+    <button class="sbtn"    onclick="filterYear('2nd Year',this)">2ND YEAR</button>
   </div>
   <div class="grid" id="grid"></div>
 </div>
@@ -451,7 +509,7 @@ const members = [
   { name:"ANSHUL",   role:"STUDENT SPORTS ASSISTANT SECRETARY (INDOOR)",    dept:"team",    year:"3rd Year",   domain:"BADMINTON",        photo:"anshul'.jpeg", bio:"BRANCH:-CIVIL ENGI.", social:[{l:"Instagram",u:"#"},{l:"LinkedIn",u:"#"}] },
   { name:"PANKAJ KUMAR", role:"STUDENT SPORTS ASSISTANT SECRETARY (OUTDOOR)",  dept:"team",    year:"3rd Year", domain:"CRICKET",     photo:"pankaj.jpeg", bio:"BRANCH:-CHEMICAL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Email",u:"#"}] },
   { name:"SIDDHARTH PATHANIA",       role:"STUDENT SPORTS ASSISTANT SECRETARY (OUTDOOR)",          dept:"team",    year:"3rd Year",   domain:"FOOTBALL",  photo:"sidd.jpeg", bio:"BRANCH:-MECHANICAL ENGI.", social:[{l:"LinkedIn",u:"#"}] },
-  { name:"VEDANT KUMAR BHARTI",        role:"STUDENT SPORTS ASSISTANT SECRETARY GYM (INDOOR)",   dept:"team",      year:"3nd Year",   domain:"GYM",       photo:"vedant.jpeg", bio:"BRANCH:-MECHANICAL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Instagram",u:"#"}] },
+  { name:"VEDANT KUMAR BHARTI",        role:"STUDENT SPORTS ASSISTANT SECRETARY GYM (INDOOR)",   dept:"team",      year:"3rd Year",   domain:"GYM",       photo:"vedant.jpeg", bio:"BRANCH:-MECHANICAL ENGI.", social:[{l:"LinkedIn",u:"#"},{l:"Instagram",u:"#"}] },
   { name:"BINDU",   role:"STUDENT SPORTS ASSISTANT SECRETARY GIRLS(ATHLETICS)",   dept:"team",  year:"3rd Year",   domain:"ATHLETICS",    photo:"bindu.jpeg", bio:"BRANCH:-COMPUTER SCIENCE ENGI.", social:[{l:"Instagram",u:"#"},{l:"LinkedIn",u:"#"}] },
   
   // ── 2Nd year ──
@@ -493,7 +551,7 @@ function buildCards(list) {
       : '<div class="photo-wrap"><div class="photo-placeholder">'+maskSVG(70,77)+'<span class="ph-label">ADD PHOTO</span></div></div>';
     const socials = m.social.map(function(s){ return '<a class="slink" href="'+s.u+'" target="_blank">'+s.l+'</a>'; }).join('');
     const dl = deptLabel[m.dept] || m.dept;
-    return '<div class="cw" data-dept="'+m.dept+'" style="animation-delay:'+(i%8*0.06)+'s">'+
+    return '<div class="cw" data-dept="'+m.dept+'" data-year="'+m.year+'" style="animation-delay:'+(i%8*0.06)+'s">'+
       '<div class="ci">'+
         '<div class="cf front">'+
           photo+
@@ -526,11 +584,35 @@ function buildCards(list) {
     '</div>';
   }).join('');
 }
-
-window.addEventListener('DOMContentLoaded', function() {
+// ═══════════════════════════════════════════════
+// MAIN FILTER — Faculty or Core Team
+// ═══════════════════════════════════════════════
+function showMain(dept, btn) {
+  // Update main buttons
+  document.querySelectorAll('.fbtn').forEach(function(b){ b.classList.remove('on'); });
+  btn.classList.add('on');
+ 
+  var subFilter = document.getElementById('sub-filter');
+ 
+  if (dept === 'faculty') {
+    // Hide sub buttons
+    subFilter.style.display = 'none';
+    // Show only faculty cards
+    document.querySelectorAll('.cw').forEach(function(c){
+      c.style.display = (c.dataset.dept === 'faculty') ? 'block' : 'none';
+    });
+  } else {
+    // Show sub buttons
+    subFilter.style.display = 'flex';
+    // Click first sub button by default (Final Year)
+    var firstSub = document.querySelector('.sbtn');
+    if (firstSub) filterYear('Final Year', firstSub);
+  }
+}
+/*window.addEventListener('DOMContentLoaded', function() {
   var firstBtn = document.querySelector('.fbtn');
   if (firstBtn) filterCards('faculty', firstBtn);
-});
+});*/
 
 // FILTER
 
@@ -543,8 +625,24 @@ function filterCards(dept, btn) {
 }
 
 
+// ═══════════════════════════════════════════════
+// SUB FILTER — Year inside Core Team
+// ═══════════════════════════════════════════════
+function filterYear(year, btn) {
+  // Update sub buttons
+  document.querySelectorAll('.sbtn').forEach(function(b){ b.classList.remove('on'); });
+  btn.classList.add('on');
+  // Show only team cards matching selected year
+  document.querySelectorAll('.cw').forEach(function(c){
+    var match = c.dataset.dept === 'team' && c.dataset.year === year;
+    c.style.display = match ? 'block' : 'none';
+  });
+}
 buildCards(members);
 
+
+var firstBtn = document.querySelector('.fbtn');
+if (firstBtn) showMain('faculty', firstBtn);
 
 </script>
 </body>
