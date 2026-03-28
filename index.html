@@ -339,6 +339,85 @@ footer { text-align: center; padding: 50px 20px 40px; border-top: 1px solid rgba
 .footer-mask { width: 48px; margin: 0 auto 16px; opacity: 0.2; }
 .footer-text { font-family: var(--mono); font-size: 9px; color: rgba(232,224,208,0.2); letter-spacing: 0.4em; text-transform: uppercase; }
 .footer-quote { font-style: italic; font-size: 15px; font-weight: 300; color: rgba(201,168,76,0.3); margin-top: 10px; letter-spacing: 0.1em; }
+/* ══════════════════════════════
+   RECORDS SECTION
+══════════════════════════════ */
+.records-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+  max-width: 1400px;
+  margin: 48px auto 80px;
+  padding: 0 32px;
+}
+ 
+.record-card {
+  background: var(--dark2);
+  border: 1px solid rgba(200,16,46,0.25);
+  overflow: hidden;
+  animation: cardIn 0.55s ease both;
+  position: relative;
+}
+ 
+.record-card::before {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  border-style: solid; border-width: 0 40px 40px 0;
+  border-color: transparent rgba(200,16,46,0.6) transparent transparent;
+  z-index: 2;
+}
+ 
+.record-game-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.15em;
+  color: #fff;
+  background: linear-gradient(90deg, var(--deep-red), rgba(122,0,24,0.4));
+  padding: 12px 20px;
+  border-bottom: 2px solid rgba(200,16,46,0.5);
+  position: relative;
+}
+ 
+.record-game-name::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 60px; height: 2px;
+  background: var(--gold);
+}
+ 
+.record-img-wrap {
+  width: 100%;
+  min-height: 220px;
+  background: var(--dark3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+ 
+.record-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+ 
+.record-card:hover .record-img {
+  transform: scale(1.03);
+}
+ 
+/* Placeholder when no image added yet */
+.record-img-wrap:not(:has(img[src]:not([src=""])))::after {
+  content: 'ADD SCREENSHOT';
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: rgba(200,16,46,0.3);
+  position: absolute;
+}
 /* AUTO SCALE */
 img { max-width: 100%; height: auto; }
  
@@ -464,6 +543,8 @@ img { max-width: 100%; height: auto; }
   <div class="filter-wrap">
      <button class="fbtn " onclick="showMain('faculty',this)">faculty</button>
     <button class="fbtn " onclick="showMain('team',this)">CORE TEAM</button>
+     <button class="fbtn"    onclick="showMain('records',this)">MOMENTS</button>
+
   </div>
 
    <div class="sub-filter-wrap" id="sub-filter" style="display:none;">
@@ -474,7 +555,159 @@ img { max-width: 100%; height: auto; }
   </div>
   <div class="grid" id="grid"></div>
 </div>
-
+<div id="records-section" style="display:none;">
+  <div class="section-head">
+    
+    <div class="section-title">MOMENTS</div>
+    <div class="section-rule"></div>
+  </div>
+ 
+  <!-- DAY BUTTONS -->
+  <div class="sub-filter-wrap">
+    <button class="sbtn on" onclick="showDay('day1',this)">DAY 1</button>
+    <button class="sbtn"    onclick="showDay('day2',this)">DAY 2</button>
+  </div>
+ 
+  <!-- DAY 1 RESULTS -->
+  <div id="day1" class="records-grid">
+ 
+    <!-- ══ ADD YOUR DAY 1 RESULTS BELOW ══ -->
+    <!-- Copy this block for each game -->
+ 
+    <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_1256.jpg" alt="Result" class="record-img">
+        <!-- Replace src="" with your screenshot URL -->
+      </div>
+    </div>
+    <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_1253.jpg" alt="Result" class="record-img">
+        <!-- Replace src="" with your screenshot URL -->
+      </div>
+    </div>
+     <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_1266.jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+    
+    <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_0876 (1).jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+     <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_0865 (1).jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+     <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_0864 (1).jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+ 
+    <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_0831 (1).jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+ 
+    <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_0821 (1).jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+     <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_0882 (1).jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+     <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_0922 (1).jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+    <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_1096.jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+     <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_1078 (1).jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+     <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_1000.jpg" alt=" Result" class="record-img">
+      </div>
+    </div>
+     <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_0882 (1).jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+    <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_0922 (1).jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+     <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_0955 (1).jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+     <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_0831 (1).jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+     <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_0079-1.jpg" alt="Result" class="record-img">
+      </div>
+    </div>
+     <div class="record-card">
+      <div class="record-game-name"></div>
+      <div class="record-img-wrap">
+        <img src="DSC_0102-1.jpg" alt=" Result" class="record-img">
+      </div>
+    </div>
+     
+ 
+    <!-- ══ END OF DAY 1 ══ -->
+  </div>
+ 
+  <!-- DAY 2 RESULTS -->
+  <div id="day2" class="records-grid" style="display:none;">
+ 
+    <!-- ══ ADD YOUR DAY 2 RESULTS BELOW ══ -->
+ 
+    
+ 
+    <!-- ══ END OF DAY 2 ══ -->
+  
+</div>
 <footer>
   <div class="footer-mask"><svg viewBox="0 0 100 110" fill="none"><ellipse cx="50" cy="48" rx="38" ry="44" fill="#c8102e"/><ellipse cx="36" cy="42" rx="9" ry="11" fill="#000"/><ellipse cx="64" cy="42" rx="9" ry="11" fill="#000"/><path d="M32 70 Q42 62 50 65 Q58 62 68 70" stroke="#c9a84c" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M30 68 Q23 75 18 66" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M70 68 Q77 75 82 66" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
   <div class="footer-text">LALKAAR · NITH ANNUAL SPORT MEET · 26'</div>
@@ -593,26 +826,53 @@ function showMain(dept, btn) {
   btn.classList.add('on');
  
   var subFilter = document.getElementById('sub-filter');
- 
-  if (dept === 'faculty') {
-    // Hide sub buttons
+  var dossier        = document.getElementById('dossier');
+  var recordsSection = document.getElementById('records-section');
+   if (dept === 'records') {
+    // Hide member grid, show records section
+    document.getElementById('grid').style.display = 'none';
     subFilter.style.display = 'none';
-    // Show only faculty cards
-    document.querySelectorAll('.cw').forEach(function(c){
-      c.style.display = (c.dataset.dept === 'faculty') ? 'block' : 'none';
-    });
+    recordsSection.style.display = 'block';
+    // Show Day 1 by default
+    var firstDay = recordsSection.querySelector('.sbtn');
+    
+    if (firstDay) showDay('day1', firstDay);
+ 
   } else {
-    // Show sub buttons
-    subFilter.style.display = 'flex';
-    // Click first sub button by default (Final Year)
-    var firstSub = document.querySelector('.sbtn');
-    if (firstSub) filterYear('Final Year', firstSub);
+    // Hide records section, show member grid
+    recordsSection.style.display = 'none';
+    document.getElementById('grid').style.display = 'grid';
+ 
+    if (dept === 'faculty') {
+      // Hide sub buttons
+      subFilter.style.display = 'none';
+      // Show only faculty cards
+      document.querySelectorAll('.cw').forEach(function(c){
+        c.style.display = (c.dataset.dept === 'faculty') ? 'block' : 'none';
+      });
+    } else {
+      // Show sub buttons
+      subFilter.style.display = 'flex';
+      // Click first sub button by default (Final Year)
+      var firstSub = document.querySelector('.sbtn');
+      if (firstSub) filterYear('Final Year', firstSub);
+    }
   }
 }
 /*window.addEventListener('DOMContentLoaded', function() {
   var firstBtn = document.querySelector('.fbtn');
   if (firstBtn) filterCards('faculty', firstBtn);
 });*/
+
+function showDay(day, btn) {
+  // Update day buttons
+  document.querySelectorAll('#records-section .sbtn').forEach(function(b){ b.classList.remove('on'); });
+  btn.classList.add('on');
+  // Show selected day, hide other
+  document.getElementById('day1').style.display = (day === 'day1') ? 'grid' : 'none';
+  document.getElementById('day2').style.display = (day === 'day2') ? 'grid' : 'none';
+}
+ 
 
 // FILTER
 
